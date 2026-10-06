@@ -3,21 +3,21 @@
 
 import kotlin.math.sqrt
 import kotlin.system.exitProcess
+//./kotlin build && python check.py
+//./kotlin run 3.0 4.0 5.0
 
-fun main (args: Array<Float>)
-{
+fun main (args: Array<String>){
     if (args.size != 3){
         println("Error: values for a, b, c required on command line")
         exitProcess(1)
     }
     else{
-        var area: Float = 0.0
-        var semp: Float = 0.0
-        var total = args[0] + args[1] + args[2]
-        semp = (total / 2).toFloat()
-        area = Math.sqrt(semp*(semp - args[0])*(semp-args[1])*(semp-args[2]))
+        var a = args[0].toFloat()
+        var b = args[1].toFloat()
+        var c = args[2].toFloat()
+        var total = a + b + c
+        var semp = (total / 2).toDouble()
+        var area = Math.sqrt(semp*(semp - a)*(semp-b)*(semp-c))
         println("Area = %.5f" .format(area))
     }
 }
-//./kotlin build && python check.py
-//./kotlin run 3.0 4.0 5.0
