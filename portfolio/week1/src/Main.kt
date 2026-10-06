@@ -3,3 +3,18 @@
 
 import kotlin.math.sqrt
 import kotlin.system.exitProcess
+
+fun main (args: Array<Float>){
+    if (args.size != 3){
+        println("Error: values for a, b, c required on command line")
+        exitProcess(1)
+    }
+    else{
+        var area = 0.0
+        var semp = 0.0
+        var total = args[0] + args[1] + args[2]
+        semp = (total / 2).toDouble()
+        area = Math.sqrt(semp*(semp - args[0])*(semp-args[1])*(semp-args[2]))
+        println("Area = %.5f" .format(area))
+    }
+}
