@@ -18,6 +18,21 @@ class MedianTest : FreeSpec({
 
     // Write four more tests here  
 
-    ""
+    "Single element returns itself"{
+        median(listOf(3.5f))shouldBe(3.5f plusOrMinus tolerance)
+    }
+
+    "Odd number of elements returns the middle element" {
+        median(listOf(1f, 2f, 3f, 4f, 5f))shouldBe(3f plusOrMinus tolerance)
+    }
+
+    "Even number of elements returns the mean of the two middle elements" {
+        median(listOf(1f, 2f, 3f, 4f))shouldBe(2.5f plusOrMinus tolerance)
+    }
+
+    "Unsorted data is sorted before correctly before calculating the median" {
+        median(listOf(10f, 2f, 7f, 3f, 0f))shouldBe(3f plusOrMinus tolerance)
+    }
+    
     
 })

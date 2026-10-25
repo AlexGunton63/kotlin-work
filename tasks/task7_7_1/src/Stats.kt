@@ -14,8 +14,8 @@ fun median (nums : List<Float>): Float{
     }
 }
 fun stats (nums : List<Float>){
-    println("Minimum: ${values.min()}")
-    println("Maximum: ${values.max()}")
-    println("Mean:    ${values.average()}")
-    println("Median:  ${median(values)}")
+    println("Minimum: ${nums.min()}")
+    println("Maximum: ${nums.max()}")
+    println("Mean:    ${nums.average()}")
+    println("Median:  ${median(nums)}")
 }
